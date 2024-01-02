@@ -1,3 +1,13 @@
 * {
   font-family: "Inter", sans-serif;
-}/*# sourceMappingURL=style.css.map */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.active-section::after {
+  width: 40% !important;
+}
+
+/*# sourceMappingURL=style.css.map */
