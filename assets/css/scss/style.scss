@@ -9,3 +9,17 @@ html {
     width: 40% !important;
   }
 }
+@keyframes review-toggle {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 0.5;
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 1;
+  }
+}

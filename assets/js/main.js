@@ -19,7 +19,7 @@ function setActiveNavLink() {
         }
       });
     }
-    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.75 });
+    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.2 });
     sections.forEach((section) => {
       observer.observe(section);
     });
@@ -123,3 +123,81 @@ function animateBlobs() {
 }
 
 animateBlobs();
+
+function reviews() {
+  const allReviewsArr = document.querySelectorAll("[data-review]");
+  const allReviews = [...allReviewsArr];
+  const allReviewsCount = allReviews.length;
+  const firstReview = document.querySelector("[data-review='1']");
+  const reviews = document.querySelector("[data-reviews]");
+  const clientImgsArr = document.querySelectorAll("[data-client-img]");
+  const clientImgs = [...clientImgsArr];
+  const reviewIndicatorsArray = document.querySelectorAll("[data-review-btn]");
+  const reviewIndicators = [...reviewIndicatorsArray];
+  let activeReview = 0;
+  let reviewChangeWorker;
+
+  function changeReview() {
+    reviews.classList.add("opacity-0");
+    clientImgs.forEach((img) => {
+      img.classList.remove("after:-translate-x-2");
+      img.classList.remove("after:-translate-y-2");
+    });
+    reviews.addEventListener(
+      "transitionend",
+      () => {
+        if (!(activeReview < allReviewsCount)) {
+          activeReview = 0;
+        }
+        let relatedBtn = document.querySelector(`[data-review-btn="${activeReview + 1}"]`);
+        reviewBtn(relatedBtn);
+        firstReview.style.marginLeft = `-${100 * activeReview}%`;
+        reviews.classList.remove("opacity-0");
+        clientImgs.forEach((img) => {
+          img.classList.add("after:-translate-x-2");
+          img.classList.add("after:-translate-y-2");
+        });
+      },
+      {
+        once: true,
+      }
+    );
+  }
+
+  function autoChangeReview() {
+    reviewChangeWorker = setInterval(async () => {
+      activeReview++;
+      changeReview();
+    }, 7000);
+  }
+  autoChangeReview();
+
+  function reviewBtn(element) {
+    reviewIndicators.forEach((btn) => {
+      btn.disabled = false;
+      let indicatorMain = btn.querySelector("[data-indicator]");
+      indicatorMain.classList.remove("top-0");
+      indicatorMain.classList.add("top-full");
+    });
+    element.querySelector("[data-indicator]").classList.remove("top-full");
+    element.querySelector("[data-indicator]").classList.add("top-0");
+    element.disabled = true;
+  }
+
+  function changeReviewByBtn() {
+    reviewIndicators.forEach((indicator) => {
+      indicator.addEventListener("click", async () => {
+        reviewBtn(indicator);
+        let btnAtt = Number(indicator.getAttribute("data-review-btn"));
+        activeReview = btnAtt - 1;
+        await new Promise((resolve) => setTimeout(resolve, 0));
+        clearInterval(reviewChangeWorker);
+        changeReview();
+        autoChangeReview();
+      });
+    });
+  }
+  changeReviewByBtn();
+}
+
+reviews();

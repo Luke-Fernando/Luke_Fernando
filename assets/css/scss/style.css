@@ -10,4 +10,17 @@ html {
   width: 40% !important;
 }
 
-/*# sourceMappingURL=style.css.map */
+@keyframes review-toggle {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 0.5;
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
