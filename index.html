@@ -477,7 +477,7 @@
             <div data-reviews class="max-w-[900px] h-auto flex justify-start items-start overflow-hidden transition-opacity duration-500 ease-linear">
                 <!-- review  -->
                 <div data-review="1"
-                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-36 transition-opacity duration-500 ease-linear -ml-[0%]">
+                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-20 transition-opacity duration-500 ease-linear -ml-[0%]">
                     <div class="min-w-[40%] h-auto flex flex-col justify-start items-center">
                         <div data-client-img class="w-[120px] aspect-square flex justify-center items-center relative after:absolute after:w-full after:h-full after:-z-10 after:border-4 
                                     after:border-secondary after:-left-5 after:-top-5 after:transition-transform after:ease-linear after:duration-500 
@@ -500,7 +500,7 @@
                 <!-- review  -->
                 <!-- review  -->
                 <div data-review="2"
-                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-36 transition-opacity duration-500 ease-linear">
+                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-20 transition-opacity duration-500 ease-linear">
                     <div class="min-w-[40%] h-auto flex flex-col justify-start items-center">
                         <div data-client-img class="w-[120px] aspect-square flex justify-center items-center relative after:absolute after:w-full after:h-full after:-z-10 after:border-4 
                                                 after:border-secondary after:-left-5 after:-top-5 after:transition-transform after:ease-linear after:duration-500 
@@ -524,7 +524,7 @@
                 <!-- review  -->
                 <!-- review  -->
                 <div data-review="3"
-                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-36 transition-opacity duration-500 ease-linear">
+                    class="min-w-full flex flex-col md:flex-row justify-between items-center md:items-start mt-20 transition-opacity duration-500 ease-linear">
                     <div class="min-w-[40%] h-auto flex flex-col justify-start items-center">
                         <div data-client-img
                             class="w-[120px] aspect-square flex justify-center items-center relative after:absolute after:w-full after:h-full after:-z-10 after:border-4 
@@ -572,6 +572,70 @@
                 </button>
             </div>
         </div>
+    </section>
+    <section data-section="contact" id="contact"
+        class="container min-h-screen h-auto mx-auto box-border pt-16 flex flex-col justify-start items-center pb-32 sm:pb-40">
+        <div class="w-full h-auto relative mb-[15vw] lg:mb-40 overflow-x-clip">
+            <h3 class="capitalize text-center lg:text-left text-6xl text-secondary font-normal pl-8 after:content-['contact'] after:absolute after:-z-10 
+                                after:top-0 after:left-1/2 after:-translate-x-1/2 lg:after:left-0 lg:after:translate-x-0 after:text-secondary/10 after:font-extralight 
+                                after:text-[28vw] sm:after:text-[150px] lg:after:text-[200px] after:uppercase">
+                contact
+            </h3>
+        </div>
+        <!-- form  -->
+        <div class="max-w-[90%] w-[900px] flex flex-wrap justify-between items-start">
+            <!-- input -->
+            <div class="w-full sm:w-[48%] h-auto flex flex-col justify-center items-start my-3 sm:my-4">
+                <label for="first-name" class="capitalize text-secondary/85 text-lg sm:text-xl font-light">
+                    first name
+                </label>
+                <input type="text" id="first-name"
+                    class="w-full h-12 box-border bg-[#D9D9D9] outline-none border-none px-3 text-secondary text-lg font-light">
+            </div>
+            <!-- input -->
+            <!-- input -->
+            <div class="w-full sm:w-[48%] h-auto flex flex-col justify-center items-start my-3 sm:my-4">
+                <label for="last-name" class="capitalize text-secondary/85 text-lg sm:text-xl font-light">
+                    last name
+                </label>
+                <input type="text" id="last-name"
+                    class="w-full h-12 box-border bg-[#D9D9D9] outline-none border-none px-3 text-secondary text-lg font-light">
+            </div>
+            <!-- input -->
+            <!-- input -->
+            <div class="w-[100%] h-auto flex flex-col justify-center items-start my-3 sm:my-4">
+                <label for="e-mail" class="capitalize text-secondary/85 text-lg sm:text-xl font-light">
+                    e-mail
+                </label>
+                <input type="email" id="e-mail"
+                    class="w-full h-12 box-border bg-[#D9D9D9] outline-none border-none px-3 text-secondary text-lg font-light">
+            </div>
+            <!-- input -->
+            <!-- input -->
+            <div class="w-[100%] h-auto flex flex-col justify-center items-start my-3 sm:my-4">
+                <label for="topic" class="capitalize text-secondary/85 text-lg sm:text-xl font-light">
+                    topic
+                </label>
+                <input type="text" id="topic"
+                    class="w-full h-12 box-border bg-[#D9D9D9] outline-none border-none px-3 text-secondary text-lg font-light">
+            </div>
+            <!-- input -->
+            <!-- input -->
+            <div class="w-[100%] h-auto flex flex-col justify-center items-start my-3 sm:my-4">
+                <label for="topic" class="capitalize text-secondary/85 text-lg sm:text-xl font-light">
+                    topic
+                </label>
+                <textarea rows="5" type="text" id="topic"
+                    class="w-full box-border bg-[#D9D9D9] outline-none border-none px-3 py-3 text-secondary text-lg font-light"></textarea>
+            </div>
+            <!-- input -->
+            <div class="w-full h-auto flex justify-end items-center mt-10">
+                <button id="send" class="capitalize text-secondary/90 text-xl px-6 py-2 border border-secondary/25 bg-primary relative after:content-[''] 
+                after:absolute after:w-full after:h-full after:-z-10 after:-top-2 after:-left-2 after:border-2 after:border-secondary 
+                after:transition-transform after:ease-linear after:duration-500 hover:after:-translate-x-2 hover:after:-translate-y-2">send</button>
+            </div>
+        </div>
+        <!-- form  -->
     </section>
 </body>
 
