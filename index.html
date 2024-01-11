@@ -36,7 +36,8 @@
                 after:bg-primary after:z-10 after:top-full after:left-0 after:transition-all after:duration-100 after:ease-linear hover:after:w-2/5">contact</a>
         </section>
     </nav>
-    <section data-section="home" id="home" class="w-full h-screen flex justify-center items-start relative">
+    <!-- home  -->
+    <section data-section="home" id="home" class="w-full h-screen flex justify-center items-start relative overflow-x-clip">
         <div class="mt-56 w-max h-auto relative">
             <h1 class="capitalize text-secondary text-[110px] sm:text-[150px] font-extralight">Luke</h1>
             <h3 data-sub-header="1" class="capitalize text-secondary text-[28px] sm:text-[40px] font-normal absolute right-0 top-0">fullstack</h3>
@@ -49,22 +50,22 @@
             </h3>
         </div>
         <!--  -->
-        <div class="w-[45vw] sm:w-[35vw] absolute left-[1%] top-1/2 -translate-y-1/2 overflow-visible">
-            <svg class="w-full overflow-visible" width="536" height="584" viewBox="0 0 536 584" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-[600px] aspect-square absolute left-0 top-16 overflow-visible flex justify-center items-center">
+            <svg class="w-full overflow-visible absolute" viewBox="0 0 536 584" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="blob-1" fill-rule="evenodd" clip-rule="evenodd"
                     d="M281.603 33.0591C339.976 40.6804 406.072 28.402 447.334 70.3889C488.418 112.194 470.794 178.43 481.159 236.12C495.954 318.472 561.806 402.009 519.928 474.444C474.629 552.796 372.101 582.308 281.603 581.285C192.001 580.273 104.817 538.902 48.6051 469.118C-2.98032 405.077 0.366379 318.291 3.57125 236.12C6.60167 158.422 3.30492 66.475 66.0979 20.6142C126.504 -23.5036 207.431 23.3751 281.603 33.0591Z"
                     stroke="#212738" stroke-width="4" />
             </svg>
         </div>
-        <div class="w-[45vw] sm:w-[35vw] absolute right-[1%] top-0 overflow-visible">
-            <svg class="w-full overflow-visible" width="527" height="565" viewBox="0 0 527 565" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-[500px] aspect-square absolute right-0 top-0 overflow-visible flex justify-center items-center">
+            <svg class="w-full overflow-visible absolute" viewBox="0 0 527 565" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="blob-2" fill-rule="evenodd" clip-rule="evenodd"
                     d="M267.709 4.9265C350.475 -7.85561 443.36 21.5108 494.814 87.5878C543.257 149.799 508.995 235.844 508.921 314.692C508.848 393.403 553.252 489.118 494.388 541.372C435.556 593.598 346.32 531.858 267.709 528.82C195.044 526.012 114.211 570.514 57.8975 524.504C-0.125298 477.098 -2.97391 389.124 5.6276 314.692C13.2625 248.625 58.4102 199.123 101.367 148.35C150.526 90.2472 192.492 16.5427 267.709 4.9265Z"
                     stroke="#212738" stroke-width="4" />
             </svg>
         </div>
-        <div class="w-[50vw] sm:w-[30vw] absolute bottom-[0] right-1/4 overflow-visible">
-            <svg class="w-full overflow-visible" width="631" height="485" viewBox="0 0 631 485" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-[500px] aspect-square absolute -bottom-16 right-1/4 overflow-visible flex justify-center items-center">
+            <svg class="w-full overflow-visible absolute" viewBox="0 0 631 485" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="blob-3" fill-rule="evenodd" clip-rule="evenodd"
                     d="M304.306 4.0664C359.149 7.21336 409.671 19.8687 456.412 48.7296C522.919 89.7956 605.75 124.594 622.979 200.836C642.316 286.403 611.378 384.14 545.228 441.758C481.551 497.223 388.696 481.475 304.306 478.413C224.534 475.519 138.833 479.112 80.2524 424.889C20.0998 369.211 -6.57527 282.061 4.42029 200.836C14.3709 127.33 71.6631 70.9037 133.681 30.2109C183.692 -2.6036 244.588 0.639766 304.306 4.0664Z"
                     stroke="#212738" stroke-width="4" />
@@ -72,6 +73,8 @@
         </div>
         <!--  -->
     </section>
+    <!-- home  -->
+    <!-- about  -->
     <section data-section="about" id="about" class="container min-h-screen h-auto mx-auto box-border pt-16">
         <div class="w-full h-auto relative mb-[15vw] lg:mb-40">
             <h3 class="capitalize text-center lg:text-left text-6xl text-secondary font-normal pl-8 after:content-['about'] after:absolute after:-z-10 
@@ -257,6 +260,8 @@
             </div>
         </div>
     </section>
+    <!-- about  -->
+    <!-- projects  -->
     <section data-section="projects" id="projects"
         class="container min-h-screen h-auto mx-auto box-border pt-16 flex flex-col justify-start items-center">
         <div class="w-full h-auto relative mb-[15vw] lg:mb-40 overflow-x-clip">
@@ -464,6 +469,8 @@
             <!-- project  -->
         </div>
     </section>
+    <!-- projects  -->
+    <!-- reviews  -->
     <section data-section="reviews" id="reviews"
         class="container min-h-screen h-auto mx-auto box-border pt-16 flex flex-col justify-start items-center">
         <div class="w-full h-auto relative mb-[15vw] lg:mb-40 overflow-x-clip">
@@ -573,6 +580,8 @@
             </div>
         </div>
     </section>
+    <!-- reviews  -->
+    <!-- contact  -->
     <section data-section="contact" id="contact"
         class="container min-h-screen h-auto mx-auto box-border pt-16 flex flex-col justify-start items-center pb-32 sm:pb-40">
         <div class="w-full h-auto relative mb-[15vw] lg:mb-40 overflow-x-clip">
@@ -637,6 +646,7 @@
         </div>
         <!-- form  -->
     </section>
+    <!-- contact  -->
     <footer class="w-full h-auto bg-secondary">
         <div class="container mx-auto h-auto flex flex-col sm:flex-row flex-wrap justify-around items-center sm:items-start py-20">
             <!-- footer part  -->
