@@ -212,3 +212,71 @@ function reviews() {
 }
 
 reviews();
+
+function contact() {
+  const sendBtn = document.getElementById("send");
+  const firstName = document.getElementById("first-name");
+  const lastName = document.getElementById("last-name");
+  const eMail = document.getElementById("e-mail");
+  const topic = document.getElementById("topic");
+  const words = document.getElementById("words");
+  const clickOrTouch = "ontouchstart" in window ? "touchstart" : "click";
+  //
+
+  sendBtn.addEventListener(clickOrTouch, async (event) => {
+    event.preventDefault();
+    // let request = new XMLHttpRequest();
+    let form = new FormData();
+
+    form.append("first_name", firstName.value);
+    form.append("last_name", lastName.value);
+    form.append("e_mail", eMail.value);
+    form.append("topic", topic.value);
+    form.append("words", words.value);
+
+    let request = await fetch("https://luke-fernando-backend.vercel.app/api/index.php", {
+      method: "POST",
+      body: form,
+    });
+
+    let response = request.text();
+    const responseText = await response.then((value) => value);
+    alert(responseText);
+    // if (responseText == "success") {
+    // alert.classList.add("show-alert");
+    // await new Promise((resolve) => setTimeout(resolve, 0));
+    // alert.classList.add("pop-alert");
+    // errorAlert.classList.remove("alert-error");
+    // successAlert.classList.add("alert-success");
+    // document.querySelector('[data-alert-text="success"]').innerText = "Thank you for contacting us!";
+    // alert("success!");
+    // } else {
+    // alert.classList.add("show-alert");
+    // await new Promise((resolve) => setTimeout(resolve, 0));
+    // alert.classList.add("pop-alert");
+    // successAlert.classList.remove("alert-success");
+    // errorAlert.classList.add("alert-error");
+    // document.querySelector('[data-alert-text="error"]').innerText = responseText;
+    // alert("error!");
+    // }
+  });
+  // alertClose.addEventListener(clickOrTouch, async (event) => {
+  //   event.preventDefault();
+  //   alert.classList.remove("pop-alert");
+  //   await new Promise((resolve) => setTimeout(resolve, 0));
+  //   alert.classList.add("pop-alert-reverse");
+  //   alert.addEventListener(
+  //     "animationend",
+  //     () => {
+  //       alert.classList.remove("show-alert");
+  //       alert.classList.remove("pop-alert-reverse");
+  //     },
+  //     {
+  //       once: true,
+  //     }
+  //   );
+  // });
+  //
+}
+
+contact();
