@@ -1,3 +1,14 @@
+function spinner() {
+  document.onreadystatechange = async () => {
+    if (document.readyState === "complete") {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      document.getElementById("preloader").style.display = "none";
+      document.querySelector("body").classList.remove("overflow-y-hidden");
+    }
+  };
+}
+spinner();
+
 function setActiveNavLink() {
   const navLinksElemnts = document.querySelectorAll("[data-nav-link]");
   const navLinks = [...navLinksElemnts];
