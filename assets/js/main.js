@@ -213,6 +213,41 @@ function reviews() {
 
 reviews();
 
+async function popAlert(message) {
+  const alertPopUp = document.getElementById("alert");
+  const alertText = document.getElementById("alert-text");
+  async function showAlert() {
+    alertText.innerText = message;
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    alertPopUp.classList.remove("hidden");
+    await new Promise((resolve) => setTimeout(resolve, 10));
+    alertPopUp.classList.remove("before:-translate-x-0");
+    alertPopUp.classList.remove("before:-translate-y-0");
+    alertPopUp.classList.add("before:-translate-x-2");
+    alertPopUp.classList.add("before:-translate-y-2");
+  }
+
+  async function hideAlert() {
+    alertPopUp.classList.remove("before:-translate-x-2");
+    alertPopUp.classList.remove("before:-translate-y-2");
+    alertPopUp.classList.add("before:-translate-x-0");
+    alertPopUp.classList.add("before:-translate-y-0");
+    alertPopUp.addEventListener(
+      "transitionend",
+      async () => {
+        alertPopUp.classList.add("hidden");
+      },
+      {
+        once: true,
+      }
+    );
+  }
+
+  showAlert();
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  hideAlert();
+}
+
 function contact() {
   const sendBtn = document.getElementById("send");
   const firstName = document.getElementById("first-name");
@@ -225,6 +260,9 @@ function contact() {
 
   sendBtn.addEventListener(clickOrTouch, async (event) => {
     event.preventDefault();
+    document.getElementById("preloader").style.display = "flex";
+    document.getElementById("preloader").style.backgroundColor = "hwb(52 91% 0% / 0.5)";
+    // document.querySelector("body").classList.add("overflow-y-hidden");
     // let request = new XMLHttpRequest();
     let form = new FormData();
 
@@ -241,24 +279,29 @@ function contact() {
 
     let response = request.text();
     const responseText = await response.then((value) => value);
-    alert(responseText);
-    // if (responseText == "success") {
-    // alert.classList.add("show-alert");
-    // await new Promise((resolve) => setTimeout(resolve, 0));
-    // alert.classList.add("pop-alert");
-    // errorAlert.classList.remove("alert-error");
-    // successAlert.classList.add("alert-success");
-    // document.querySelector('[data-alert-text="success"]').innerText = "Thank you for contacting us!";
-    // alert("success!");
-    // } else {
-    // alert.classList.add("show-alert");
-    // await new Promise((resolve) => setTimeout(resolve, 0));
-    // alert.classList.add("pop-alert");
-    // successAlert.classList.remove("alert-success");
-    // errorAlert.classList.add("alert-error");
-    // document.querySelector('[data-alert-text="error"]').innerText = responseText;
-    // alert("error!");
-    // }
+    document.getElementById("preloader").style.display = "none";
+    document.getElementById("preloader").style.backgroundColor = "#fffce8";
+    // document.querySelector("body").classList.remove("overflow-y-hidden");
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    if (responseText == "success") {
+      popAlert("message sent successfully!");
+      // alert.classList.add("show-alert");
+      // await new Promise((resolve) => setTimeout(resolve, 0));
+      // alert.classList.add("pop-alert");
+      // errorAlert.classList.remove("alert-error");
+      // successAlert.classList.add("alert-success");
+      // document.querySelector('[data-alert-text="success"]').innerText = "Thank you for contacting us!";
+      // alert("success!");
+    } else {
+      popAlert(responseText);
+      // alert.classList.add("show-alert");
+      // await new Promise((resolve) => setTimeout(resolve, 0));
+      // alert.classList.add("pop-alert");
+      // successAlert.classList.remove("alert-success");
+      // errorAlert.classList.add("alert-error");
+      // document.querySelector('[data-alert-text="error"]').innerText = responseText;
+      // alert("error!");
+    }
   });
   // alertClose.addEventListener(clickOrTouch, async (event) => {
   //   event.preventDefault();

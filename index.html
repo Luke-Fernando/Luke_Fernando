@@ -19,7 +19,7 @@
 <body class="bg-primary overflow-x-clip overflow-y-hidden">
     <!-- preloader -->
     <section id="preloader" class="preloader">
-        <div class="content scale-75 sm:scale-50">
+        <div id="content" class="content scale-75 sm:scale-50">
             <div class="bars">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -60,6 +60,13 @@
                 after:bg-primary after:z-10 after:top-full after:left-0 after:transition-all after:duration-100 after:ease-linear hover:after:w-2/5">contact</a>
         </section>
     </nav>
+    <!-- alert -->
+    <section id="alert" class="w-max max-w-[95%] h-auto fixed z-40 top-20 left-1/2 -translate-x-1/2 border-2 border-secondary/20 before:absolute before:content-[''] 
+    before:w-full before:h-full before:border-2 before:border-secondary before:-z-10 before:top-0 before:left-0 hidden before:transition-transform 
+    before:duration-500 before:ease-linear before:-translate-x-0 before:-translate-y-0">
+        <p id="alert-text" class="font-light text-lg text-secondary capitalize px-7 py-3 bg-primary">message sent successfully!</p>
+    </section>
+    <!-- alert -->
     <!-- home  -->
     <section data-section="home" id="home" class="w-full h-screen flex justify-center items-start relative overflow-x-clip">
         <div class="mt-56 w-max h-auto relative">
